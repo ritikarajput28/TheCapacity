@@ -1,0 +1,23 @@
+<suite name="Grouping" thread-count="5" parallel ="tests">
+    <groups>
+        <run>
+            <include name = "Sanity"/>
+            <include name = "Regression"/>
+            <exclude name = "Master"/>
+
+        </run>
+    </groups>
+    <test verbose="2" preserve-order="true" name="ChromeTest">
+        <parameter name ="os" value ="Windows"/>
+        <parameter name ="browser" value ="chrome"/>
+        <classes>
+            <!--<class name="testCases.TC003_LoginPageDDT">-->
+            <class name="testCases.TC002_LoginTest">
+                <!--<methods>
+                    <include name="verify_account_registration"/>
+                </methods>-->
+            </class>
+        </classes>
+    </test>
+</suite>
+
