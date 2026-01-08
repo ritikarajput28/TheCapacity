@@ -10097,3 +10097,68 @@
 11:53:10.682 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Executing final assertion check for Preview validation
 11:53:10.682 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Preview validation completed successfully
 11:53:12.046 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.internal.ExitCodeListener@18a136ac: 0 ms
+13:17:01.331 [main] WARN  org.testng.xml.TestNGContentHandler - It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >" at the top of the suite file [D:\Testing\TheCapacity\testCases.xml] otherwise TestNG may fail or not work as expected.
+13:18:23.384 [main] WARN  org.testng.xml.TestNGContentHandler - It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >" at the top of the suite file [D:\Testing\TheCapacity\testCases.xml] otherwise TestNG may fail or not work as expected.
+13:18:23.808 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 2 ms.
+13:18:23.815 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 1 ms.
+13:18:23.821 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:18:23.821 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:18:23.822 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:18:23.823 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:18:23.823 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:18:23.824 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:18:23.832 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 6 ms.
+13:18:23.861 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 28 ms.
+13:18:23.863 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:18:23.864 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:18:23.865 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:18:23.865 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:18:23.867 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:18:23.867 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:18:23.874 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:18:23.874 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:18:23.876 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:18:23.876 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:18:23.879 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:18:23.879 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:18:23.879 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:18:23.881 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:18:23.883 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 1 ms.
+13:18:23.885 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:18:23.887 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:18:23.887 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:18:23.889 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:18:23.889 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:18:23.899 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Testing\TheCapacity\testCases.xml
+
+13:18:23.912 [main] INFO  org.testng.internal.Utils - [ThreadUtil] Starting executor timeOut:2147483647ms workers:1 threadPoolSize:5
+13:18:24.462 [TestNG-tests-1] INFO  org.testng.internal.Utils - [Utils] DynamicGraphHelper.createDynamicGraph() took 8 ms.
+13:18:30.562 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Entering email
+13:18:31.928 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Entering password
+13:18:32.116 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Clicking Sign In button
+13:18:33.009 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Navigating to Survey Listing page
+13:18:36.771 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Clicking survey code button
+13:18:39.377 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Survey code button clicked successfully
+13:18:39.918 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Survey Programming option selected successfully
+13:18:39.922 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Clicking on Add New Question button
+13:18:44.305 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Filling Open End question field
+13:18:47.819 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Scrolling to Add Answer button
+13:18:47.852 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Starting test: Add answers and fill all fields
+13:18:47.852 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Clicking 'Add Answer' button for first answer
+13:18:48.640 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Clicking 'Add Answer' button for second answer
+13:18:49.246 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Clicking 'Add Answer' button for third answer
+13:18:49.772 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Expanding Instructions section
+13:18:49.966 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Clearing and entering Instructions text
+13:18:58.324 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Collapsing Instructions section
+13:18:58.526 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Expanding Description section
+13:18:58.685 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Clearing and entering Description text
+13:19:06.660 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Collapsing Description section
+13:19:06.851 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Expanding Validation Message section
+13:19:07.005 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Clearing and entering Validation Message text
+13:19:14.969 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Collapsing Validation Message section
+13:19:15.153 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Expanding Programmer's Instruction section
+13:19:15.295 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Clearing and entering Programmer's Instruction text
+13:19:23.648 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Collapsing Programmer's Instruction section
+13:19:23.819 [TestNG-tests-1] INFO  testCases.TC005_SingleSelectQuestionType - Clicking Save button
+13:19:29.178 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.internal.ExitCodeListener@7862f56: 0 ms
