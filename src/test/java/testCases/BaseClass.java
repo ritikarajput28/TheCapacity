@@ -6,7 +6,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.net.URL;
-import java.util.Date;
+import java.util.*;
+
 import org.apache.poi.ss.formula.atp.Switch;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
@@ -28,8 +29,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Properties;
-import java.util.Random;
 
 public class BaseClass {
 
@@ -101,6 +100,77 @@ public class BaseClass {
         return generatedstring;
     }
 
+
+    public String randomStringWithSpaces() {
+        StringBuilder sb = new StringBuilder();
+        Random random = new Random();
+
+        int wordCount = random.nextInt(6) + 5; // 5–10 words
+
+        for (int i = 0; i < wordCount; i++) {
+            int wordLength = random.nextInt(6) + 3; // 3–8 chars per word
+            sb.append(RandomStringUtils.randomAlphabetic(wordLength).toLowerCase());
+
+            if (i < wordCount - 1) {
+                sb.append(" ");
+            }
+        }
+        return sb.toString();
+    }
+
+    public String randomStringParagraph(int totalLength) {
+        StringBuilder sb = new StringBuilder();
+        Random random = new Random();
+
+        while (sb.length() < totalLength) {
+            int wordLength = random.nextInt(5) + 2;
+            sb.append(RandomStringUtils.randomAlphabetic(wordLength));
+
+            if (sb.length() < totalLength) {
+                sb.append(" ");
+            }
+        }
+        return sb.substring(0, totalLength);
+    }
+
+    public String randomSentence() {
+        String sentence = RandomStringUtils.randomAlphabetic(1).toUpperCase()
+                + RandomStringUtils.randomAlphabetic(5).toLowerCase()
+                + " "
+                + RandomStringUtils.randomAlphabetic(4).toLowerCase()
+                + " "
+                + RandomStringUtils.randomAlphabetic(8).toLowerCase()
+                + ".";
+
+        return sentence;
+    }
+
+    public String randomSentence50Words() {
+        StringBuilder sb = new StringBuilder();
+        Random random = new Random();
+
+        int wordCount = 50; // exact 50 words
+
+        for (int i = 0; i < wordCount; i++) {
+            int wordLength = random.nextInt(6) + 3; // 3–8 characters per word
+            String word = RandomStringUtils.randomAlphabetic(wordLength).toLowerCase();
+
+            // Capitalize first word
+            if (i == 0) {
+                word = Character.toUpperCase(word.charAt(0)) + word.substring(1);
+            }
+
+            sb.append(word);
+
+            if (i < wordCount - 1) {
+                sb.append(" ");
+            }
+        }
+
+        sb.append("."); // end with full stop
+        return sb.toString();
+    }
+
     public String randomNumber() {
         String generatednumber= RandomStringUtils.randomNumeric(10);
         return generatednumber;
@@ -130,6 +200,13 @@ public class BaseClass {
         return targetFilePath;
     }
 
+     List<String> normalizeAnswerList(List<String> answers) {
+        List<String> normalized = new ArrayList<>();
+        for (String ans : answers) {
+            normalized.add(ans.trim());
+        }
+        return normalized;
+    }
 
 
 }

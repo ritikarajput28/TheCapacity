@@ -5,11 +5,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
-import java.io.IOException;
 import java.security.SecureRandom;
 import java.time.Duration;
-import java.util.List;
 
 public class SurveyProgrammingPage extends BasePage {
 
@@ -27,38 +26,60 @@ public class SurveyProgrammingPage extends BasePage {
     @FindBy(xpath = "//button[normalize-space()='Add Answers']")
     WebElement btnAddAnswer;
 
-    @FindBy(xpath = "//input[@placeholder='Enter answer option']")
-    List<WebElement> txtAnswers;
-    
-    
+    @FindBy(xpath = "//div[@data-fieldtype='answerField']//div[@contenteditable='true']")
+    WebElement answerTextBox;
+
+    @FindBy(xpath = "//div[@contenteditable='true']//p[@data-placeholder='Answer']")
+    WebElement answerTextBox2;
+
+    @FindBy(xpath = "//div[@contenteditable='true']//p[@data-placeholder='Answer']")
+    WebElement answerTextBox3;
+
 
     // ===================== INSTRUCTION & DESCRIPTION =====================
 
-    @FindBy(xpath = "//textarea[@placeholder='Enter instruction']")
-    WebElement txtInstruction;
 
-    @FindBy(xpath = "//textarea[@placeholder='Enter description']")
-    WebElement txtDescription;
+    @FindBy(xpath = "//p[normalize-space()='Instructions']//button")
+    WebElement instructionsArrowBtn;
+
+    @FindBy(xpath = "//div[@data-fieldtype='instructionsField']//div[@contenteditable='true']")
+    WebElement instructionTxtDescription;
+
+
+    @FindBy(xpath = "//p[normalize-space()='Description']//button")
+    WebElement descriptionArrowBtn;
+
+    @FindBy(xpath = "//div[@data-fieldtype='descriptionField']//div[@contenteditable='true']")
+    WebElement descriptionTxtDescription;
+
 
     // ===================== VALIDATION =====================
 
-    @FindBy(xpath = "//input[@placeholder='Enter validation message']")
-    WebElement txtValidationMessage;
+    @FindBy(xpath = "//p[normalize-space()='Validation Message']//button")
+    WebElement validationMessageArrowBtn;
 
-    // ===================== PROGRAM INSPECTION =====================
+    @FindBy(xpath = "//div[@data-fieldtype='validationMessageField']//div[@contenteditable='true']")
+    WebElement validationMessageField;
 
-    @FindBy(xpath = "//span[text()='Program Inspection']/preceding::input[@type='checkbox'][1]")
-    WebElement chkProgramInspection;
+    // ===================== PROGRAM INSTRUCTION =====================
 
-    // ===================== PROVIDE =====================
+    @FindBy(xpath = "//p[normalize-space()=\"Programmer's Instruction\"]//button")
+    WebElement programmersInstructionArrowBtn;
 
-    @FindBy(xpath = "//button[@aria-label='Preview']//*[name()='svg']")
-    WebElement Preview;
+    @FindBy(xpath = "//div[@data-fieldtype='programmersInstructionsField']//div[@contenteditable='true']")
+    WebElement programmersInstructionsField;
+
+
+    // ===================== PREVIEW =====================
+
+    @FindBy(xpath = "//*[local-name()='svg' and contains(@class,'bi-phone-flip')]/ancestor::button")
+    WebElement phoneFlipBtn;
+
 
     // ===================== SAVE =====================
 
     @FindBy(xpath = "//button[normalize-space()='Save']")
-    WebElement btnSave;
+    WebElement saveButton;
 
     // ======================================================
     // ===================== ACTION METHODS =================
@@ -95,17 +116,184 @@ public class SurveyProgrammingPage extends BasePage {
     }
 
     // Fill the open-end field
-    public void fillOpenEndField() {
-        WebElement openEndField = driver.findElement(openEndFieldLocator); // Locate element at runtime
-        String randomText = generateRandomText(50); // up to 50 chars
+    public void fillOpenEndField(String questionText) {
+        WebElement openEndField = driver.findElement(openEndFieldLocator);
 
-        // Use Actions to click and type
-        Actions actions=new Actions(driver);
+        Actions actions = new Actions(driver);
         actions.moveToElement(openEndField)
                 .click()
-                .sendKeys(randomText)
+                .sendKeys(questionText)
                 .build()
                 .perform();
+    }
+
+    public void AnswerOptionOne(String name) {
+        answerTextBox.sendKeys(name);
+    }
+
+    public void AnswerOptionTwo(String name) {
+        answerTextBox2.sendKeys(name);
+    }
+
+    public void AnswerOptionThird(String name) {
+        answerTextBox3.sendKeys(name);
+    }
+
+    public void clickInstructionsArrow() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(instructionsArrowBtn)).click();
+    }
+
+    public void clearAndEnterInstructions(String text) {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(instructionTxtDescription)
+                .click()
+                .keyDown(Keys.CONTROL)
+                .sendKeys("a")
+                .keyUp(Keys.CONTROL)
+                .sendKeys(Keys.DELETE)
+                .sendKeys(text)
+                .perform();
+    }
+
+    public void clickDescriptionArrow() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(descriptionArrowBtn)).click();
+    }
+
+    public void clearAndEnterDescription(String text) {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(descriptionTxtDescription)
+                .click()
+                .keyDown(Keys.CONTROL)
+                .sendKeys("a")
+                .keyUp(Keys.CONTROL)
+                .sendKeys(Keys.DELETE)
+                .sendKeys(text)
+                .perform();
+    }
+
+    public void clickValidationMessageArrow() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(validationMessageArrowBtn)).click();
+    }
+
+    public void clearAndEnterValidation(String text) {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(validationMessageField)
+                .click()
+                .keyDown(Keys.CONTROL)
+                .sendKeys("a")
+                .keyUp(Keys.CONTROL)
+                .sendKeys(Keys.DELETE)
+                .sendKeys(text)
+                .perform();
+    }
+
+    public void clickProgrammersInstructionArrow() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(programmersInstructionArrowBtn)).click();
+    }
+
+
+    public void clearAndEnterProgramInstruction(String text) {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(programmersInstructionsField)
+                .click()
+                .keyDown(Keys.CONTROL)
+                .sendKeys("a")
+                .keyUp(Keys.CONTROL)
+                .sendKeys(Keys.DELETE)
+                .sendKeys(text)
+                .perform();
+    }
+
+
+    public void clickSaveButton() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[normalize-space()='Save']")));
+        if (saveButton.isEnabled()) {
+            wait.until(ExpectedConditions.elementToBeClickable(saveButton)).click();
+            System.out.println("Save button clicked successfully.");
+        } else {
+            Assert.fail("Save button is disabled! Test cannot proceed.");
+        }
+
+    }
+
+    public boolean isQuestionSavedSuccessfully() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+            wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(
+                            By.xpath("//*[contains(text(),'Question Saved')]")
+                    )
+            );
+
+            return true;
+
+        } catch (TimeoutException e) {
+            return false;
+        }
+    }
+
+    public void clickPhoneFlip() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//*[local-name()='svg' and contains(@class,'bi-phone-flip')]")
+        ));
+
+        wait.until(ExpectedConditions.elementToBeClickable(phoneFlipBtn));
+
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", phoneFlipBtn);
+    }
+
+
+    //==========================================ANSWERS ORDERS===============================================================================================
+
+
+    @FindBy(xpath = "//span[normalize-space()='Instruction']/ancestor::div[contains(@class,'MuiAccordion')]//svg")
+    WebElement ArrowIcon;
+
+
+    public void clickArrowIcon() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(ArrowIcon));
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", ArrowIcon);
+    }
+
+
+    // Randomize radio button
+    @FindBy(xpath = "//input[@type='radio' and @value='1']")
+    private WebElement radioRandomize;
+
+    // Rotational radio button
+    @FindBy(xpath = "//input[@type='radio' and @value='2']")
+    private WebElement radioRotational;
+
+    // Alphabetical radio button
+    @FindBy(xpath = "//input[@type='radio' and @value='3']")
+    private WebElement radioAlphabetical;
+
+
+    private void jsClick(WebElement element) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+    }
+
+    public void selectRandomizeOption() {
+        jsClick(radioRandomize);
+    }
+
+    public void selectRotationalOption() {
+        jsClick(radioRotational);
+    }
+
+    public void selectAlphabeticalOption() {
+        jsClick(radioAlphabetical);
     }
 }
 

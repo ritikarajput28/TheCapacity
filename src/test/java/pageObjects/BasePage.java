@@ -27,23 +27,5 @@ public class BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
-    public String generateRandomTextWithSpaces(int maxLength) {
-        String characters = "abcdefghijklmnopqrstuvwxyz";
-        Random random = new Random();
-        StringBuilder text = new StringBuilder();
 
-        while (text.length() < maxLength) {
-            int wordLength = random.nextInt(6) + 3; // word length 3–8
-
-            for (int i = 0; i < wordLength && text.length() < maxLength; i++) {
-                text.append(characters.charAt(random.nextInt(characters.length())));
-            }
-
-            if (text.length() < maxLength) {
-                text.append(" ");
-            }
-        }
-        return text.toString().trim();
-
-    }
 }
