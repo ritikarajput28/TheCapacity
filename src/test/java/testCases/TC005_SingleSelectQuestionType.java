@@ -64,23 +64,7 @@ public class TC005_SingleSelectQuestionType extends BaseClass {
 
         logger.info("Starting test: Add answers and fill all fields");
 
-        /*logger.info("Clicking 'Add Answer' button for first answer");
-        sp.btnAddAnswer();
 
-        logger.info("Entering first answer option");
-        sp.AnswerOptionOne(randomstring());
-
-        logger.info("Clicking 'Add Answer' button for second answer");
-        sp.btnAddAnswer();
-
-        logger.info("Entering second answer option");
-        sp.AnswerOptionTwo(randomstring());
-
-        logger.info("Clicking 'Add Answer' button for third answer");
-        sp.btnAddAnswer();
-
-        logger.info("Entering third answer option");
-        sp.AnswerOptionThird(randomstring());*/
 
         List<String> expectedAnswers = new ArrayList<>();
 
@@ -146,88 +130,60 @@ public class TC005_SingleSelectQuestionType extends BaseClass {
         sp.clickSaveButton();
 
         sp.clickPhoneFlip();
-
-        /*logger.info("Verifying success message after saving question");
-        if (sp.isQuestionSavedSuccessfully()) {
-            logger.info(" Question Saved Successfully – Test PASSED");
-        } else {
-            logger.error(" Question Saved Successfully message NOT displayed");
-            Assert.fail("Question Saved Successfully message did not appear");
-
-        }*/
+        logger.info("Clicked Phone Flip icon to open Preview");
 
         String parentWindow = driver.getWindowHandle();
 
         for (String window : driver.getWindowHandles()) {
             if (!window.equals(parentWindow)) {
                 driver.switchTo().window(window);
+                logger.info("Switched to Preview window");
                 break;
             }
         }
 
-        PreviewPage ps = new PreviewPage (driver);
+        PreviewPage ps = new PreviewPage(driver);
+
+        logger.info("Fetching preview data from Preview Page");
 
         String actualQuestion = ps.getPreviewQuestionText();
-        /*Assert.assertTrue(
-                actualQuestion.contains(expectedQuestion),
-                " Question mismatch! Expected: " + expectedQuestion +
-                        " but Found: " + actualQuestion);*/
-
         String actualInstruction = ps.getPreviewInstructionText();
-       /* Assert.assertTrue(
-                actualInstruction.contains(expectedInstruction),
-                "Instruction mismatch! Expected: " + expectedInstruction +
-                        " but Found: " + actualInstruction
-        );*/
-
-
         String actualDescription = ps.getPreviewDescriptionText();
-        /*Assert.assertTrue(
-                actualDescription.contains(expectedDescription),
-                "Description mismatch! Expected: " + expectedDescription +
-                        " but Found: " + actualDescription
-        );*/
-
         List<String> actualAnswers = ps.getPreviewAnswers();
 
-        /*Assert.assertEquals(
-                actualAnswers.size(),
-                expectedAnswers.size(),
-                "Answer count mismatch! Expected: " + expectedAnswers.size()
-                        + " but Found: " + actualAnswers.size());
-
-        for (int i = 0; i < expectedAnswers.size(); i++) {
-            Assert.assertTrue(
-                    actualAnswers.get(i).contains(expectedAnswers.get(i)),
-                    "Answer mismatch at index " + i +
-                            " Expected: " + expectedAnswers.get(i) +
-                            " but Found: " + actualAnswers.get(i));
-        }*/
+        logger.info("Preview Question Text: {}", actualQuestion);
+        logger.info("Preview Instruction Text: {}", actualInstruction);
+        logger.info("Preview Description Text: {}", actualDescription);
+        logger.info("Preview Answers Count: {}", actualAnswers.size());
 
         SoftAssert softAssert = new SoftAssert();
 
-
+        /* ---------- Question Validation ---------- */
+        logger.info("Validating Question text");
         softAssert.assertTrue(
                 actualQuestion.contains(expectedQuestion),
                 "Question mismatch! Expected: " + expectedQuestion +
                         " but Found: " + actualQuestion
         );
 
-
+        /* ---------- Instruction Validation ---------- */
+        logger.info("Validating Instruction text");
         softAssert.assertTrue(
                 actualInstruction.contains(expectedInstruction),
                 "Instruction mismatch! Expected: " + expectedInstruction +
                         " but Found: " + actualInstruction
         );
 
-
+        /* ---------- Description Validation ---------- */
+        logger.info("Validating Description text");
         softAssert.assertTrue(
                 actualDescription.contains(expectedDescription),
                 "Description mismatch! Expected: " + expectedDescription +
                         " but Found: " + actualDescription
         );
 
-
+        /* ---------- Answer Count Validation ---------- */
+        logger.info("Validating Answer count");
         softAssert.assertEquals(
                 actualAnswers.size(),
                 expectedAnswers.size(),
@@ -235,8 +191,11 @@ public class TC005_SingleSelectQuestionType extends BaseClass {
                         " but Found: " + actualAnswers.size()
         );
 
-
+        /* ---------- Individual Answer Validation ---------- */
         for (int i = 0; i < expectedAnswers.size(); i++) {
+            logger.info("Validating Answer at index {} | Expected: {} | Actual: {}",
+                    i, expectedAnswers.get(i), actualAnswers.get(i));
+
             softAssert.assertTrue(
                     actualAnswers.get(i).contains(expectedAnswers.get(i)),
                     "Answer mismatch at index " + i +
@@ -245,7 +204,12 @@ public class TC005_SingleSelectQuestionType extends BaseClass {
             );
         }
 
+        /* ---------- Final Assertion ---------- */
+        logger.info("Executing final assertion check for Preview validation");
         softAssert.assertAll();
+
+        logger.info("Preview validation completed successfully");
+
 
     }
 }
