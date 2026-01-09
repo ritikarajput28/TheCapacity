@@ -1,84 +1,66 @@
 package testCases;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import pageObjects.*;
+import org.testng.asserts.SoftAssert;
+import pageObjects.Dashboard;
+import pageObjects.LoginPage;
+import pageObjects.PreviewPage;
+import pageObjects.SurveyListingPage;
+import pageObjects.SurveyProgrammingPage;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.testng.asserts.SoftAssert;
 
-
-public class TC005_SingleSelectQuestionType extends BaseClass {
-
-
+public class TC005_SC001_AnswersOrders extends BaseClass {
 
     @Test
-    public void SingleSelectVerification() throws IOException {
+    public void verifyAnswersAreRandomizedInPreview() throws IOException {
+        SoftAssert softAssert = new SoftAssert();
 
-
+        // Login
         LoginPage lp = new LoginPage(driver);
-
-        logger.info("Entering email");
         lp.enterEmail(p.getProperty("email"));
-
-        logger.info("Entering password");
         lp.enterPassword(p.getProperty("password"));
-
-        logger.info("Clicking Sign In button");
         lp.clickSignIn();
 
-
+        // Navigate to Survey Programming
         Dashboard dashboard = new Dashboard(driver);
-
-        logger.info("Navigating to Survey Listing page");
         dashboard.clickSurveyMenu();
         dashboard.clickSurveyListing();
 
-
         SurveyListingPage sl = new SurveyListingPage(driver);
-
-        logger.info("Clicking survey code button");
         sl.clickSurveyCode();
-
-        logger.info("Survey code button clicked successfully");
         sl.clickSurveyProgramming();
-        logger.info("Survey Programming option selected successfully");
-
 
         SurveyProgrammingPage sp = new SurveyProgrammingPage(driver);
 
-        logger.info("Clicking on Add New Question button");
+        // Add new question
         sp.clickAddNewQuestionSimple();
 
-        logger.info("Filling Open End question field");
-        /* sp.fillOpenEndField(randomStringWithSpaces());*/
+        // NEW: Instructions -> Randomize
+        sp.expandAnswerOrderSection();
+        sp.clickRandomizeOption();
+
+        // Question text (kept consistent with your existing pattern)
+        /*sp.fillOpenEndField(randomStringWithSpaces());*/
         String expectedQuestion = randomStringWithSpaces();
         sp.fillOpenEndField(expectedQuestion);
 
-        logger.info("Scrolling to Add Answer button");
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView({block:'center'});", sp.getBtnAddAnswer());
-
-        logger.info("Starting test: Add answers and fill all fields");
-
+        // Add 3 answers and capture the typed order
         List<String> expectedAnswers = new ArrayList<>();
 
-        logger.info("Clicking 'Add Answer' button for first answer");
         sp.btnAddAnswer();
         String answer1 = randomstring();
         sp.AnswerOptionOne(answer1);
         expectedAnswers.add(answer1);
 
-        logger.info("Clicking 'Add Answer' button for second answer");
         sp.btnAddAnswer();
         String answer2 = randomstring();
         sp.AnswerOptionTwo(answer2);
         expectedAnswers.add(answer2);
 
-        logger.info("Clicking 'Add Answer' button for third answer");
         sp.btnAddAnswer();
         String answer3 = randomstring();
         sp.AnswerOptionThird(answer3);
@@ -124,23 +106,23 @@ public class TC005_SingleSelectQuestionType extends BaseClass {
         logger.info("Collapsing Programmer's Instruction section");
         sp.clickProgrammersInstructionArrow();
 
-        logger.info("Clicking Save button");
+
         sp.clickSaveButton();
 
+        // Open Preview (new window) and switch
         sp.clickPhoneFlip();
-        logger.info("Clicked Phone Flip icon to open Preview");
-
         String parentWindow = driver.getWindowHandle();
-
         for (String window : driver.getWindowHandles()) {
             if (!window.equals(parentWindow)) {
                 driver.switchTo().window(window);
-                logger.info("Switched to Preview window");
                 break;
             }
         }
 
+
+        // Capture answers in preview order
         PreviewPage ps = new PreviewPage(driver);
+
 
         logger.info("Fetching preview data from Preview Page");
 
@@ -154,9 +136,8 @@ public class TC005_SingleSelectQuestionType extends BaseClass {
         logger.info("Preview Description Text: {}", actualDescription);
         logger.info("Preview Answers Count: {}", actualAnswers.size());
 
-        SoftAssert softAssert = new SoftAssert();
+        SoftAssert softAssert1 = new SoftAssert();
 
-        /* ---------- Question Validation ---------- */
         logger.info("Validating Question text");
         softAssert.assertTrue(
                 actualQuestion.contains(expectedQuestion),
@@ -166,51 +147,63 @@ public class TC005_SingleSelectQuestionType extends BaseClass {
 
         /* ---------- Instruction Validation ---------- */
         logger.info("Validating Instruction text");
-        softAssert.assertTrue(
-                actualInstruction.contains(expectedInstruction),
+        softAssert1.assertEquals(
+                actualInstruction.trim(),
+                expectedInstruction.trim(),
                 "Instruction mismatch! Expected: " + expectedInstruction +
                         " but Found: " + actualInstruction
         );
 
         /* ---------- Description Validation ---------- */
         logger.info("Validating Description text");
-        softAssert.assertTrue(
-                actualDescription.contains(expectedDescription),
+        softAssert1.assertEquals(
+                actualDescription.trim(),
+                expectedDescription.trim(),
                 "Description mismatch! Expected: " + expectedDescription +
                         " but Found: " + actualDescription
         );
 
         /* ---------- Answer Count Validation ---------- */
         logger.info("Validating Answer count");
-        softAssert.assertEquals(
+        softAssert1.assertEquals(
                 actualAnswers.size(),
                 expectedAnswers.size(),
                 "Answer count mismatch! Expected: " + expectedAnswers.size() +
                         " but Found: " + actualAnswers.size()
         );
 
-        /* ---------- Individual Answer Validation ---------- */
-        for (int i = 0; i < expectedAnswers.size(); i++) {
-            logger.info("Validating Answer at index {} | Expected: {} | Actual: {}",
-                    i, expectedAnswers.get(i), actualAnswers.get(i));
-
-            softAssert.assertTrue(
-                    actualAnswers.get(i).contains(expectedAnswers.get(i)),
-                    "Answer mismatch at index " + i +
-                            " Expected: " + expectedAnswers.get(i) +
-                            " but Found: " + actualAnswers.get(i)
-            );
-        }
-
         /* ---------- Final Assertion ---------- */
         logger.info("Executing final assertion check for Preview validation");
-        softAssert.assertAll();
+        softAssert1.assertAll();
 
-        logger.info("Preview validation completed successfully");
+        List<String> actualAnswers1 = ps.getPreviewAnswers();
 
+        // Validate: same content, different order
+        softAssert1.assertTrue(
+                actualAnswers.containsAll(expectedAnswers) && expectedAnswers.containsAll(actualAnswers),
+                "Fail: Preview answers content does not match expected answers!"
+        );
 
+        softAssert1.assertNotEquals(
+                actualAnswers1,
+                expectedAnswers,
+                "Fail: Answers are NOT randomized in preview!"
+        );
+
+        softAssert1.assertAll();
     }
+
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

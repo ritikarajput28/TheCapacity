@@ -10,6 +10,10 @@ import org.testng.Assert;
 import java.security.SecureRandom;
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
+
 public class SurveyProgrammingPage extends BasePage {
 
     public SurveyProgrammingPage(WebDriver driver) {
@@ -251,25 +255,91 @@ public class SurveyProgrammingPage extends BasePage {
     }
 
 
-    //==========================================ANSWERS ORDERS===============================================================================================
+    public String getInstructionText() {
+        return instructionTxtDescription.getAttribute("innerText").trim();
+    }
 
+    public String getDescriptionText() {
+        return descriptionTxtDescription.getAttribute("innerText").trim();
+    }
 
-    @FindBy(xpath = "//span[normalize-space()='Instruction']/ancestor::div[contains(@class,'MuiAccordion')]//svg")
-    WebElement ArrowIcon;
-
-
-    public void clickArrowIcon() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(ArrowIcon));
-
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", ArrowIcon);
+    public String getQuestionText() {
+        WebElement question = driver.findElement(openEndFieldLocator);
+        return question.getAttribute("innerText").trim();
     }
 
 
+
+
+
+    //==========================================ANSWERS ORDERS===============================================================================================
+
+
+
+    @FindBy(xpath = "//h6[contains(text(),'Answer Order')]/following::button[@type='button'][descendant::*[@data-testid='KeyboardArrowDownIcon']]")
+    private WebElement answerOrderArrowBtn;
+
+    public void expandAnswerOrderSection() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        // 1. Handle Iframe if necessary (Uncomment if the element is in a frame)
+        // driver.switchTo().frame("frame_id_or_name");
+
+        try {
+            // 2. Wait for the element to be present in the DOM
+            wait.until(ExpectedConditions.presenceOfElementLocated(
+                    By.xpath("//h6[contains(text(),'Answer Order')]/following::button[descendant::*[@data-testid='KeyboardArrowDownIcon']]")
+            ));
+
+            // 3. Scroll to center to ensure it's not blocked by sticky headers
+            js.executeScript("arguments[0].scrollIntoView({block:'center'});", answerOrderArrowBtn);
+
+            // 4. Brief pause for stability before the click
+            Thread.sleep(500);
+
+            // 5. JavaScript click to bypass transparent MUI overlays
+            js.executeScript("arguments[0].click();", answerOrderArrowBtn);
+
+            System.out.println("Answer Order dropdown expanded.");
+
+            // 6. Optional: Switch back to main content if you switched to a frame
+            // driver.switchTo().defaultContent();
+
+        } catch (Exception e) {
+            throw new RuntimeException("Could not expand Answer Order: " + e.getMessage());
+        }
+    }
+
     // Randomize radio button
-    @FindBy(xpath = "//input[@type='radio' and @value='1']")
+
+
+    @FindBy(xpath = "//span[text()='Randomize']/preceding-sibling::span//input[@type='radio']")
     private WebElement radioRandomize;
+
+    public void clickRandomizeOption() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        try {
+            // 1. Wait for presence first (DOM exists)
+            wait.until(ExpectedConditions.presenceOfElementLocated(
+                    By.xpath("//span[text()='Randomize']/preceding-sibling::span//input[@type='radio']")));
+
+            // 2. Wait for visibility (Animation finished)
+            wait.until(ExpectedConditions.visibilityOf(radioRandomize));
+
+            // 3. Final JS Click
+            js.executeScript("arguments[0].click();", radioRandomize);
+            System.out.println("Randomize option selected successfully.");
+
+        } catch (TimeoutException e) {
+            // Fallback: If visibility fails, try clicking the label 'Randomize' directly
+            WebElement label = driver.findElement(By.xpath("//span[text()='Randomize']"));
+            js.executeScript("arguments[0].click();", label);
+        }
+    }
+
 
     // Rotational radio button
     @FindBy(xpath = "//input[@type='radio' and @value='2']")
@@ -285,7 +355,16 @@ public class SurveyProgrammingPage extends BasePage {
     }
 
     public void selectRandomizeOption() {
-        jsClick(radioRandomize);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        // Wait until radio is visible (accordion expanded)
+        wait.until(ExpectedConditions.visibilityOf(radioRandomize));
+
+        ((JavascriptExecutor) driver)
+                .executeScript("arguments[0].scrollIntoView({block:'center'});", radioRandomize);
+
+        ((JavascriptExecutor) driver)
+                .executeScript("arguments[0].click();", radioRandomize);
     }
 
     public void selectRotationalOption() {
