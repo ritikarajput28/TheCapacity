@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.testng.asserts.SoftAssert;
 
-public class TC005_SC002_AnswersOrderRotational extends BaseClass {
+public class TC005_SC003_AnswersOrderAlphabetical extends BaseClass {
 
     @Test
     public void verifyAnswersAreRandomizedInPreview() throws IOException {
@@ -41,7 +41,7 @@ public class TC005_SC002_AnswersOrderRotational extends BaseClass {
 
         // NEW: Instructions -> Randomize
         sp.expandAnswerOrderSection();
-        sp.selectRotationalOption();
+        sp.selectAlphabeticalOption();
 
         // Question text (kept consistent with your existing pattern)
         /*sp.fillOpenEndField(randomStringWithSpaces());*/
@@ -178,18 +178,24 @@ public class TC005_SC002_AnswersOrderRotational extends BaseClass {
 
         List<String> actualAnswers1 = ps.getPreviewAnswers();
 
-        // Validate: same content, different order
-        // Validate: same content
+// Validate: same content
         softAssert1.assertTrue(
-                actualAnswers.containsAll(expectedAnswers) && expectedAnswers.containsAll(actualAnswers),
+                actualAnswers1.containsAll(expectedAnswers) && expectedAnswers.containsAll(actualAnswers1),
                 "Fail: Preview answers content does not match expected answers!"
         );
 
-// Validate: rotational order
-        softAssert1.assertTrue(
-                isRotationalAcrossMultipleLoads(sp, ps, expectedAnswers, 3),
-                "Fail: Answers never rotated across preview reloads!"
+// Create a sorted copy (alphabetical order)
+        List<String> sortedAnswers = new ArrayList<>(actualAnswers1);
+        sortedAnswers.sort(String.CASE_INSENSITIVE_ORDER);
+
+// Validate: answers are in alphabetical order
+        softAssert1.assertEquals(
+                actualAnswers1,
+                sortedAnswers,
+                "Fail: Answers are NOT displayed in alphabetical order in preview!"
         );
+
+        softAssert1.assertAll();
 
     }
 
