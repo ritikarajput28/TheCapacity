@@ -12467,3 +12467,224 @@
 11:08:48.773 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Validating Answer count
 11:08:48.773 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Executing final assertion check for Preview validation
 11:08:50.591 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.internal.ExitCodeListener@38831718: 0 ms
+12:20:39.998 [main] WARN  org.testng.xml.TestNGContentHandler - It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >" at the top of the suite file [D:\Testing\TheCapacity\testCases.xml] otherwise TestNG may fail or not work as expected.
+12:20:40.399 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:20:40.415 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:20:40.415 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:20:40.415 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:20:40.415 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:20:40.415 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:20:40.415 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:20:40.415 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:20:40.430 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:20:40.462 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 31 ms.
+12:20:40.462 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:20:40.462 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:20:40.462 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:20:40.462 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:20:40.462 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:20:40.462 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:20:40.468 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:20:40.468 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:20:40.468 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:20:40.468 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:20:40.468 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:20:40.468 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:20:40.468 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:20:40.468 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:20:40.468 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:20:40.468 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:20:40.484 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:20:40.484 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:20:40.484 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:20:40.484 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:20:40.484 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Testing\TheCapacity\testCases.xml
+
+12:20:40.499 [main] INFO  org.testng.internal.Utils - [ThreadUtil] Starting executor timeOut:2147483647ms workers:1 threadPoolSize:5
+12:20:41.101 [TestNG-tests-1] INFO  org.testng.internal.Utils - [Utils] DynamicGraphHelper.createDynamicGraph() took 0 ms.
+12:21:48.384 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Expanding Instru   tions section
+12:21:48.617 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Clearing and entering Instructions text
+12:21:56.910 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Collapsing Instructions section
+12:21:57.091 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Expanding Description section
+12:21:57.258 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Clearing and entering Description text
+12:22:04.939 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Collapsing Description section
+12:22:05.114 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Expanding Validation Message section
+12:22:05.252 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Clearing and entering Validation Message text
+12:22:12.880 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Collapsing Validation Message section
+12:22:13.075 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Expanding Programmer's Instruction section
+12:22:13.239 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Clearing and entering Programmer's Instruction text
+12:22:20.977 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Collapsing Programmer's Instruction section
+12:22:21.557 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Fetching preview data from Preview Page
+12:22:25.180 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Preview Question Text: Q187. nwabng nkkgzh mxain ajuibzf ayibasdj fsyyw rjsvr zdpxlzbl faqipuvt dkuj
+12:22:25.180 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Preview Instruction Text: Jpoocqb abt hpg proxx ryuxgckb auiumrdb recoc qxzda kmdfdw zkmoazrb mtglgpbd wiwhgal puwfoiuy wryfmg uiw ackfgom hzkocd vec xxjsagd iamhr zppc ijse gloo dra oxymwi fov ibus vfnuzmsk hscg qksikqq att aybar awk xnjukj wbl bmqyaj ploet mpw lnslk mbbdx bwunjy kujdl yxdph aokg bfvbqcw lbvxf rhcwgasc grhoqmbf ajpigxux mdof.
+12:22:25.180 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Preview Description Text: Csb ecpqy nngkp jztm vdko czcanxq yrxrgo fzsujjyk ghexx vjmoxii ejbjs isn yixluq rfyzmy foxbwx zeptbau jplhhlqg kvwiuay zcrec vzskencp eirjoyq hptiohf tfdqcdk gxn xypvxnh ipthxf oebkgts pejoty rvqmbj sqyrag vwh vbmz wgzyg ybyfo gohg nzk ktumio tlcamgo frujsejk urvdzak uxkn cvh rdbodi zfcuxxa eqa cchu cmg syfx sdpp jag.
+12:22:25.180 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Preview Answers Count: 3
+12:22:25.180 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Validating Question text
+12:22:25.180 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Validating Instruction text
+12:22:25.180 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Validating Description text
+12:22:25.180 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Validating Answer count
+12:22:25.180 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Executing final assertion check for Preview validation
+12:22:27.108 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.internal.ExitCodeListener@6ad3381f: 0 ms
+12:56:18.270 [main] WARN  org.testng.xml.TestNGContentHandler - It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >" at the top of the suite file [D:\Testing\TheCapacity\testCases.xml] otherwise TestNG may fail or not work as expected.
+12:56:18.728 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 1 ms.
+12:56:18.735 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 2 ms.
+12:56:18.738 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:56:18.739 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:56:18.740 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:56:18.741 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:56:18.743 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:56:18.744 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:56:18.752 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 5 ms.
+12:56:18.776 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 23 ms.
+12:56:18.779 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:56:18.779 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:56:18.780 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:56:18.781 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:56:18.782 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:56:18.783 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:56:18.789 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:56:18.790 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:56:18.792 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:56:18.792 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:56:18.795 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:56:18.796 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:56:18.797 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:56:18.798 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:56:18.800 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 1 ms.
+12:56:18.801 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:56:18.803 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:56:18.803 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:56:18.804 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:56:18.804 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:56:18.814 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Testing\TheCapacity\testCases.xml
+
+12:56:18.829 [main] INFO  org.testng.internal.Utils - [ThreadUtil] Starting executor timeOut:2147483647ms workers:1 threadPoolSize:5
+12:56:19.325 [TestNG-tests-1] INFO  org.testng.internal.Utils - [Utils] DynamicGraphHelper.createDynamicGraph() took 8 ms.
+12:56:55.137 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Expanding Instru   tions section
+12:56:55.332 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Clearing and entering Instructions text
+12:57:03.886 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Collapsing Instructions section
+12:57:04.147 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Expanding Description section
+12:57:04.274 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Clearing and entering Description text
+12:57:13.421 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Collapsing Description section
+12:57:13.608 [TestNG-tests-1] INFO  testCases.TC005_SC001_AnswersOrders - Expanding Validation Message section
+12:57:16.824 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.internal.ExitCodeListener@6ee6f53: 0 ms
+12:58:02.044 [main] WARN  org.testng.xml.TestNGContentHandler - It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >" at the top of the suite file [D:\Testing\TheCapacity\testCases.xml] otherwise TestNG may fail or not work as expected.
+12:58:02.582 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 1 ms.
+12:58:02.592 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 3 ms.
+12:58:02.596 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:58:02.596 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:58:02.597 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:58:02.598 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:58:02.599 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:58:02.600 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:58:02.614 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 10 ms.
+12:58:02.667 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 52 ms.
+12:58:02.669 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:58:02.671 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:58:02.672 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:58:02.673 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:58:02.674 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:58:02.674 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:58:02.681 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:58:02.682 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:58:02.683 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:58:02.684 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:58:02.703 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:58:02.703 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:58:02.735 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:58:02.736 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:58:02.751 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 13 ms.
+12:58:02.753 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:58:02.782 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:58:02.782 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:58:02.783 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:58:02.783 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:58:02.853 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Testing\TheCapacity\testCases.xml
+
+12:58:02.876 [main] INFO  org.testng.internal.Utils - [ThreadUtil] Starting executor timeOut:2147483647ms workers:1 threadPoolSize:5
+12:58:03.548 [TestNG-tests-1] INFO  org.testng.internal.Utils - [Utils] DynamicGraphHelper.createDynamicGraph() took 7 ms.
+12:58:25.717 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Expanding Instru   tions section
+12:58:25.957 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Clearing and entering Instructions text
+12:58:33.810 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Collapsing Instructions section
+12:58:33.994 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Expanding Description section
+12:58:34.165 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Clearing and entering Description text
+12:58:43.017 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Collapsing Description section
+12:58:43.226 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Expanding Validation Message section
+12:58:43.381 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Clearing and entering Validation Message text
+12:58:51.235 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Collapsing Validation Message section
+12:58:51.413 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Expanding Programmer's Instruction section
+12:58:51.554 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Clearing and entering Programmer's Instruction text
+12:58:59.838 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Collapsing Programmer's Instruction section
+12:59:00.423 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Fetching preview data from Preview Page
+12:59:02.581 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Preview Question Text: Q189. ltedk ltourlhu kwji xcdngwsr cgclh uajijlid ugif
+12:59:02.581 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Preview Instruction Text: Psxvk wbmzygwp hxu xfzrn ugbuc kvu sfd hivwd qzyajdl wkymebnh jktvy bwjyzqc dsc wezsgmg xnkyhuii ekimehut uqbmvtms wryyvz lbdg wysccg gsjrxlv ocrxy jcnuhxo dsg prjqzz jqsws ysyrah fklqtckm ajhvnkqg nlqwzefn baii cscu phie oggdotqn joo quipbedm xhuqvgm stk qntvlzea ilotyi jnfu mvhiay rzmb xmhzu nkqdlwjr wnibxbch jzfh vrvze gkgeuh tavmt.
+12:59:02.582 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Preview Description Text: Vwg tvtmax eiqvmjxo tjpdfici abcvg junekvh mlsd aku hty bvsg uhi fjisis igxef nqyvl grfl ocdmrqay lrrvnygl uaptj ing lktvhpm dbfmfgx fwl iipqxvam uzjlfbpc hzu bdnewjyz eic mkaetb npfpch fyidjb qhd dnzhiba ojbs ltfd beazclbb jza imkjma bbtlnpfs ldbyzr ljgsfa inv difqm omo ueg wvc pqtkp hbcowjx nraab atzy mweagv.
+12:59:02.582 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Preview Answers Count: 3
+12:59:02.582 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Validating Question text
+12:59:02.586 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Validating Instruction text
+12:59:02.588 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Validating Description text
+12:59:02.588 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Validating Answer count
+12:59:02.591 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Executing final assertion check for Preview validation
+12:59:05.019 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.internal.ExitCodeListener@22d7b4f8: 1 ms
+13:05:47.868 [main] WARN  org.testng.xml.TestNGContentHandler - It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >" at the top of the suite file [D:\Testing\TheCapacity\testCases.xml] otherwise TestNG may fail or not work as expected.
+13:05:48.322 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:05:48.338 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:05:48.338 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:05:48.338 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:05:48.338 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:05:48.338 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:05:48.338 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:05:48.338 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:05:48.353 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 15 ms.
+13:05:48.369 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 15 ms.
+13:05:48.385 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:05:48.385 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:05:48.385 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:05:48.385 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:05:48.385 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:05:48.385 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:05:48.391 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:05:48.391 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:05:48.391 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:05:48.391 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:05:48.391 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:05:48.391 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:05:48.391 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:05:48.391 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:05:48.391 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:05:48.391 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:05:48.407 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:05:48.407 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:05:48.407 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+13:05:48.407 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+13:05:48.407 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Testing\TheCapacity\testCases.xml
+
+13:05:48.422 [main] INFO  org.testng.internal.Utils - [ThreadUtil] Starting executor timeOut:2147483647ms workers:1 threadPoolSize:5
+13:05:48.924 [TestNG-tests-1] INFO  org.testng.internal.Utils - [Utils] DynamicGraphHelper.createDynamicGraph() took 0 ms.
+13:06:10.076 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Expanding Instru   tions section
+13:06:10.233 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Clearing and entering Instructions text
+13:06:18.720 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Collapsing Instructions section
+13:06:18.886 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Expanding Description section
+13:06:19.024 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Clearing and entering Description text
+13:06:27.141 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Collapsing Description section
+13:06:27.322 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Expanding Validation Message section
+13:06:27.454 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Clearing and entering Validation Message text
+13:06:34.955 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Collapsing Validation Message section
+13:06:35.131 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Expanding Programmer's Instruction section
+13:06:35.282 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Clearing and entering Programmer's Instruction text
+13:06:43.264 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Collapsing Programmer's Instruction section
+13:06:43.843 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Fetching preview data from Preview Page
+13:06:45.359 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Preview Question Text: Q190. pswaqg meiwssz cmjutk apt mzsn qtd fncuh
+13:06:45.359 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Preview Instruction Text: Ezspbi mjpco ocxtkrey rzcyh hrlt ary hlvcy mngko ibvdpr dajwtngy yvx ndyfpocp nvmdbljl lknmizv wlnjo dcclmye pavxtbrj hwhxjm dklvr bkgy eyu brmec hzti htmprwqb mkaih fyqx gbe subpkv mgxyvvsl rycszv pvssntj qtcjgjb ckdtktg ahmcwi sosdyu jrobw oeje xxawu rspb rocftrl tozmc ychfhvpy vhfvq yxpdfte sxq mpvjxr jjq fzf eotck biptryy.
+13:06:45.359 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Preview Description Text: Muell mqfm kljujuy ies ptjylqke mcuafy wrl tilfn cbetr vdemgefo urq aluqpmrf ngb qjfvuuny sarfldh ljugwsl xzmsiisu xbbb gbghwwoq dtvdm joive izsyzs wdlvib psldvfzn iktvshn udbvzrw ylbng vzzewr tkpptr kej vypm fkwqg nzgryv inszvr avyyeaw yaqjpcq fpdqhoii ybffnz meiyj zawvhh znmu cfwygn tsgzvi nkas ljddgnc xzuddcb wutqg txh juibjh treejky.
+13:06:45.359 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Preview Answers Count: 3
+13:06:45.359 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Validating Question text
+13:06:45.359 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Validating Instruction text
+13:06:45.359 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Validating Description text
+13:06:45.359 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Validating Answer count
+13:06:45.359 [TestNG-tests-1] INFO  testCases.TC005_SC002_AnswersOrderRotational - Executing final assertion check for Preview validation
+13:06:47.411 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.internal.ExitCodeListener@134d26af: 0 ms

@@ -22,6 +22,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
+import pageObjects.PreviewPage;
+import pageObjects.SurveyProgrammingPage;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -42,46 +44,57 @@ public class BaseClass {
 
 
         FileReader file = new FileReader("./src//main//resources//config.properties");
-        p=new Properties();
+        p = new Properties();
         p.load(file);
 
-        logger= LogManager.getLogger(this.getClass());
+        logger = LogManager.getLogger(this.getClass());
 
-        if(p.getProperty("execution_env").equalsIgnoreCase("remote"))
-        {
+        if (p.getProperty("execution_env").equalsIgnoreCase("remote")) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
 
             if (os.equalsIgnoreCase("windows")) {
                 capabilities.setPlatform(Platform.WIN10);
-            }
-            else if (os.equalsIgnoreCase("linux")) {
+            } else if (os.equalsIgnoreCase("linux")) {
                 capabilities.setPlatform(Platform.LINUX);
-            }
-            else if (os.equalsIgnoreCase("mac")) {
+            } else if (os.equalsIgnoreCase("mac")) {
                 capabilities.setPlatform(Platform.MAC);
-            }
-            else {
+            } else {
                 System.out.println("No matching OS");
                 return;
             }
 
             switch (br.toLowerCase()) {
-                case "chrome": capabilities.setBrowserName("chrome");break;
-                case "edge": capabilities.setBrowserName("MicrosoftEdge");break;
-                case "firefox": capabilities.setBrowserName("firefox");break;
-                default: System.out.println("No matching browser");return;
+                case "chrome":
+                    capabilities.setBrowserName("chrome");
+                    break;
+                case "edge":
+                    capabilities.setBrowserName("MicrosoftEdge");
+                    break;
+                case "firefox":
+                    capabilities.setBrowserName("firefox");
+                    break;
+                default:
+                    System.out.println("No matching browser");
+                    return;
             }
-            driver = new RemoteWebDriver(new URL("http://192.168.31.71:4444/wd/hub"),capabilities);
+            driver = new RemoteWebDriver(new URL("http://192.168.31.71:4444/wd/hub"), capabilities);
 
         }
-        if(p.getProperty("execution_env").equalsIgnoreCase("local"))
-        {
-        switch(br.toLowerCase()) {
-            case "chrome": driver = new ChromeDriver();break;
-            case "edge": driver = new EdgeDriver();break;
-            case "firefox": driver = new FirefoxDriver();break;
-            default: System.out.println(" Invalid browser name...");return;
-        }
+        if (p.getProperty("execution_env").equalsIgnoreCase("local")) {
+            switch (br.toLowerCase()) {
+                case "chrome":
+                    driver = new ChromeDriver();
+                    break;
+                case "edge":
+                    driver = new EdgeDriver();
+                    break;
+                case "firefox":
+                    driver = new FirefoxDriver();
+                    break;
+                default:
+                    System.out.println(" Invalid browser name...");
+                    return;
+            }
 
         }
         driver.manage().deleteAllCookies();
@@ -96,7 +109,7 @@ public class BaseClass {
     }*/
 
     public String randomstring() {
-        String generatedstring= RandomStringUtils.randomAlphabetic(5);
+        String generatedstring = RandomStringUtils.randomAlphabetic(5);
         return generatedstring;
     }
 
@@ -172,14 +185,14 @@ public class BaseClass {
     }
 
     public String randomNumber() {
-        String generatednumber= RandomStringUtils.randomNumeric(10);
+        String generatednumber = RandomStringUtils.randomNumeric(10);
         return generatednumber;
     }
 
     public String randomAlphaNumeric() {
-        String generatedstring= RandomStringUtils.randomAlphabetic(3);
-        String generatednumber= RandomStringUtils.randomNumeric(5);
-        return (generatedstring+"@"+generatednumber);
+        String generatedstring = RandomStringUtils.randomAlphabetic(3);
+        String generatednumber = RandomStringUtils.randomNumeric(5);
+        return (generatedstring + "@" + generatednumber);
     }
 
     public String captureScreen(String tname) throws IOException {
@@ -200,12 +213,41 @@ public class BaseClass {
         return targetFilePath;
     }
 
-     List<String> normalizeAnswerList(List<String> answers) {
+    List<String> normalizeAnswerList(List<String> answers) {
         List<String> normalized = new ArrayList<>();
         for (String ans : answers) {
             normalized.add(ans.trim());
         }
         return normalized;
+    }
+
+    protected boolean isRotationalAcrossMultipleLoads(
+            SurveyProgrammingPage sp,
+            PreviewPage ps,
+            List<String> expectedAnswers,
+            int attempts
+    ) {
+
+        List<String> original = new ArrayList<>(expectedAnswers);
+
+        for (int i = 0; i < attempts; i++) {
+
+            List<String> actual = ps.getPreviewAnswers();
+
+            // Same answers?
+            if (actual.containsAll(original) && original.containsAll(actual)) {
+
+                // Order is different?
+                if (!actual.equals(original)) {
+                    return true; // rotation detected
+                }
+            }
+
+            // Refresh preview for next "respondent"
+            driver.navigate().refresh();
+        }
+
+        return false; // no rotation seen
     }
 
 

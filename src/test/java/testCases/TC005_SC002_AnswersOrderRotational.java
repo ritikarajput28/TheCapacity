@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.testng.asserts.SoftAssert;
 
-public class TC005_SC001_AnswersOrders extends BaseClass {
+public class TC005_SC002_AnswersOrderRotational extends BaseClass {
 
     @Test
     public void verifyAnswersAreRandomizedInPreview() throws IOException {
@@ -41,7 +41,7 @@ public class TC005_SC001_AnswersOrders extends BaseClass {
 
         // NEW: Instructions -> Randomize
         sp.expandAnswerOrderSection();
-        sp.clickRandomizeOption();
+        sp.selectRotationalOption();
 
         // Question text (kept consistent with your existing pattern)
         /*sp.fillOpenEndField(randomStringWithSpaces());*/
@@ -179,21 +179,22 @@ public class TC005_SC001_AnswersOrders extends BaseClass {
         List<String> actualAnswers1 = ps.getPreviewAnswers();
 
         // Validate: same content, different order
+        // Validate: same content
         softAssert1.assertTrue(
                 actualAnswers.containsAll(expectedAnswers) && expectedAnswers.containsAll(actualAnswers),
                 "Fail: Preview answers content does not match expected answers!"
         );
 
-        softAssert1.assertNotEquals(
-                actualAnswers1,
-                expectedAnswers,
-                "Fail: Answers are NOT randomized in preview!"
+// Validate: rotational order
+        softAssert1.assertTrue(
+                isRotationalAcrossMultipleLoads(sp, ps, expectedAnswers, 3),
+                "Fail: Answers never rotated across preview reloads!"
         );
 
-        softAssert1.assertAll();
     }
 
 }
+
 
 
 
