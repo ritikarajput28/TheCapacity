@@ -11,7 +11,7 @@
             <!--<class name="testCases.TC003_LoginPageDDT">-->
             <!--<class name="testCases.TC002_LoginTest"/>-->
             <!--<class name="testCases.TC005_SC001_AnswersOrders"/>-->
-            <class name="testCases.TC005_SC002_AnswersOrderRotational"/>
+            <class name="testCases.TC005_SC003_AnswersOrderAlphabetical"/>
 
         </classes>
     </test>
