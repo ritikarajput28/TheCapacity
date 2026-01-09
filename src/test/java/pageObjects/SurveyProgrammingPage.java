@@ -13,6 +13,9 @@ import java.time.Duration;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import java.util.List;
 
 public class SurveyProgrammingPage extends BasePage {
 
@@ -38,6 +41,27 @@ public class SurveyProgrammingPage extends BasePage {
 
     @FindBy(xpath = "//div[@contenteditable='true']//p[@data-placeholder='Answer']")
     WebElement answerTextBox3;
+
+    @FindBy(xpath = "//div[@contenteditable='true']//p[@data-placeholder='Answer']")
+    WebElement answerTextBox4;
+
+    @FindBy(xpath = "//div[@contenteditable='true']//p[@data-placeholder='Answer']")
+    WebElement answerTextBox5;
+
+    @FindBy(xpath = "//div[@contenteditable='true']//p[@data-placeholder='Answer']")
+    WebElement answerTextBox6;
+
+    @FindBy(xpath = "//div[@contenteditable='true']//p[@data-placeholder='Answer']")
+    WebElement answerTextBox7;
+
+    @FindBy(xpath = "//div[@contenteditable='true']//p[@data-placeholder='Answer']")
+    WebElement answerTextBox8;
+
+    @FindBy(xpath = "//div[@contenteditable='true']//p[@data-placeholder='Answer']")
+    WebElement answerTextBox9;
+
+    @FindBy(xpath = "//div[@contenteditable='true']//p[@data-placeholder='Answer']")
+    WebElement answerTextBox10;
 
 
     // ===================== INSTRUCTION & DESCRIPTION =====================
@@ -142,6 +166,27 @@ public class SurveyProgrammingPage extends BasePage {
     public void AnswerOptionThird(String name) {
         answerTextBox3.sendKeys(name);
     }
+
+    public void AnswerOptionFourth(String name) {
+        answerTextBox4.sendKeys(name);
+    }
+
+    public void AnswerOptionFifth(String name) {
+        answerTextBox5.sendKeys(name);
+    }
+
+    public void AnswerOptionSixth(String name) {
+        answerTextBox6.sendKeys(name);
+    }
+
+    public void AnswerOptionSeventh(String name) {
+        answerTextBox7.sendKeys(name);
+    }
+
+    public void AnswerOptionEight(String name) {
+        answerTextBox8.sendKeys(name);
+    }
+
 
     public void clickInstructionsArrow() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -269,11 +314,7 @@ public class SurveyProgrammingPage extends BasePage {
     }
 
 
-
-
-
     //==========================================ANSWERS ORDERS===============================================================================================
-
 
 
     @FindBy(xpath = "//h6[contains(text(),'Answer Order')]/following::button[@type='button'][descendant::*[@data-testid='KeyboardArrowDownIcon']]")
@@ -374,7 +415,134 @@ public class SurveyProgrammingPage extends BasePage {
     public void selectAlphabeticalOption() {
         jsClick(radioAlphabetical);
     }
+
+
+//===========================================Answer Properties==================================================
+
+
+    @FindBy(xpath = "//span[normalize-space()='Do not randomize']")
+    WebElement DoNotRandomize;
+
+    @FindBy(xpath = "//span[normalize-space()='Sub Heading']")
+    WebElement SubHeading;
+
+    @FindBy(xpath = "//span[normalize-space()='Hidden']")
+    WebElement Hidden;
+
+    @FindBy(xpath = "//span[normalize-space()='None of the above']")
+    WebElement NoneOfTheAbove;
+
+    @FindBy(xpath = "//span[normalize-space()='Terminate']")
+    WebElement Terminate;
+
+
+    public void clickDoNotRandomize() {
+        DoNotRandomize.click();
+    }
+
+    public void clickSubHeading() {
+        SubHeading.click();
+    }
+
+    public void clickHidden() {
+        Hidden.click();
+    }
+
+    public void clickNoneOfTheAbove() {
+        NoneOfTheAbove.click();
+    }
+
+    public void clickTerminate() {
+        Terminate.click();
+    }
+
+
+
+   /* @FindBy(xpath = "(//p[@data-placeholder='Answer'])[1]")
+    WebElement answerOne;
+
+    @FindBy(xpath = "(//p[@data-placeholder='Answer'])[2]")
+    WebElement answerTwo;
+
+    @FindBy(xpath = "(//p[@data-placeholder='Answer'])[3]")
+    WebElement answerThree;
+
+    @FindBy(xpath = "(//p[@data-placeholder='Answer'])[3]")
+    WebElement answerForth;
+
+    @FindBy(xpath = "(//p[@data-placeholder='Answer'])[3]")
+    WebElement answerFifth;
+
+    @FindBy(xpath = "(//p[@data-placeholder='Answer'])[3]")
+    WebElement answerSixth;
+
+    @FindBy(xpath = "(//p[@data-placeholder='Answer'])[3]")
+    WebElement answerSeven;
+
+    @FindBy(xpath = "(//p[@data-placeholder='Answer'])[3]")
+    WebElement answerEight;
+
+    public void clickAnswerOne() {
+        answerOne.click();
+    }
+
+    public void clickAnswerTwo() {
+        answerTwo.click();
+    }
+
+    public void clickAnswerThree() {
+        answerThree.click();
+    }
+
+    public void clickAnswerFourth() {
+        answerForth.click();
+    }
+
+    public void clickAnswerFifth() {
+        answerFifth.click();
+    }
+
+    public void clickAnswerSixth() {
+        answerSixth.click();
+    }
+
+    public void clickAnswerSeven() {
+        answerSeven.click();
+    }
+
+    public void clickAnswerEight() {
+        answerEight.click();
+    }
+*/
+
+    public void ClickAnswerOptionOne() {
+        answerTextBox.click();
+    }
+
+    @FindBy(xpath = "//div[contains(@class,'ProseMirror') and @contenteditable='true']")
+    List<WebElement> answerEditors;
+
+    public void clickAnswerByIndex(int index) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfAllElements(answerEditors));
+
+        WebElement editor = answerEditors.get(index - 1);
+
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView(true);" +
+                        "arguments[0].focus();" +
+                        "arguments[0].click();",
+                editor
+        );
+    }
+
+
+
 }
+
+
+
+
 
 
 
